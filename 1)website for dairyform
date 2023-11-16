@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            background-image: url('C:\Users\geeth\Downloads\travel.png.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            font-family: Brush Script MT, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>milk dairy form</h2>
+        <form action="HOME2.php" method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" name="login">Login</button>
+        </form>
+    </div>
+</body>
+
+</html>
+2)HOMEPAGE DETAILS:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dairy farm</title>
+    <style>
+        /* Basic styling for demonstration purposes */
+        /* ... (existing styles remain the same) ... */
+        nav {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My dairy farm</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="stockdetails.php">stockdetails</a></li>
+            <li><a href="customerdetails.php">customerdetails</a></li>
+            <li><a href="milkvendordetails.php">milkvendordetails</a></li>
+            
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="main" id="home">
+            <h2>Welcome to My dairyfarm!</h2>
+            <p>This is the home section.</p>
+        </div>
+        <div class="main" id="about">
+            <h2>About Me</h2>
+            <p>Info
+3)STOCKDETAILS:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ko-matha Dairy Farm - Stock Details</title>
+    <!-- Add your CSS links here for styling -->
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Ko-matha Dairy Farm</h1>
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
+                <li><a href="admin.php">Admin</a></li>
+                <li><a href="stock.php">Stock</a></li>
+                <!-- Add other navigation links as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Stock Entry Form Section -->
+    <section id="stock-entry">
+        <h2>Stock Entry</h2>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <label for="product">Product:</label>
+            <input type="text" id="product" name="product" required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Daily Report Section -->
+    <section id="daily-report">
+        <h2>Daily Report</h2>
+        <!-- Display daily stock updates -->
+        <?php
+        // Add PHP code here to fetch and display daily stock information
+        ?>
+    </section>
+
+    <!-- Monthly Report Section -->
+    <section id="monthly-report">
+        <h2>Monthly Report</h2>
+        <!-- Display monthly stock summaries -->
+        <?php
+        // Add PHP code here to fetch and display monthly stock information
+        ?>
+    </section>
+
+    <!-- Yearly Report Section -->
+    <section id="yearly-report">
+        <h2>Yearly Report</h2>
+        <!-- Display yearly stock statistics -->
+        <?php
+        // Add PHP code here to fetch and display yearly stock information
+        ?>
+    </section>
+
+    <!-- Add your JavaScript links here if needed -->
+
+</body>
+</html>
+
+<?php
+// Check if the stock entry form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get data from the form
+    $product = $_POST['product'];
+    $quantity = $_POST['quantity'];
+    $date = $_POST['date'];
+
+    // Add PHP code here to process and store the stock entry in the database
+    // You may also want to add validation and sanitation
+    // For simplicity, this example does not perform database operations
+}
+?>
+4)CUSTOMER DETAILS:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ko-matha Dairy Farm - Customer Details</title>
+    <!-- Add your CSS links here for styling -->
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Ko-matha Dairy Farm</h1>
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
+                <li><a href="admin.php">Admin</a></li>
+                <li><a href="stock.php">Stock</a></li>
+                <li><a href="customer.php">Customer</a></li>
+                <!-- Add other navigation links as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Purchase Details Form Section -->
+    <section id="purchase-details">
+        <h2>Purchase Details</h2>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <label for="customer_name">Customer Name:</label>
+            <input type="text" id="customer_name" name="customer_name" required>
+
+            <label for="product">Product:</label>
+            <input type="text" id="product" name="product" required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+
+            <label for="purchase_date">Purchase Date:</label>
+            <input type="date" id="purchase_date" name="purchase_date" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Customer Online Purchase Order Section -->
+    <section id="online-purchase-order">
+        <h2>Online Purchase Order</h2>
+        <!-- Display online purchase order form -->
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <!-- Add online purchase order form fields here -->
+            <button type="submit">Place Order</button>
+        </form>
+    </section>
+
+    <!-- Add your JavaScript links here if needed -->
+
+</body>
+</html>
+
+<?php
+// Check if the purchase details form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get data from the form
+    $customerName = $_POST['customer_name'];
+    $product = $_POST['product'];
+    $quantity = $_POST['quantity'];
+    $purchaseDate = $_POST['purchase_date'];
+
+    // Add PHP code here to process and store the purchase details in the database
+    // You may also want to add validation and sanitation
+    // For simplicity, this example does not perform database operations
+}
+?>
+5)MILK VENDOR DETAILS:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ko-matha Dairy Farm - Milk Vendor Details</title>
+    <!-- Add your CSS links here for styling -->
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Ko-matha Dairy Farm</h1>
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
+                <li><a href="admin.php">Admin</a></li>
+                <li><a href="stock.php">Stock</a></li>
+                <li><a href="customer.php">Customer</a></li>
+                <li><a href="vendor.php">Milk Vendors</a></li>
+                <!-- Add other navigation links as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Vendor Information Form Section -->
+    <section id="vendor-information">
+        <h2>Vendor Information</h2>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <label for="vendor_name">Vendor Name:</label>
+            <input type="text" id="vendor_name" name="vendor_name" required>
+
+            <label for="contact_person">Contact Person:</label>
+            <input type="text" id="contact_person" name="contact_person" required>
+
+            <label for="contact_number">Contact Number:</label>
+            <input type="text" id="contact_number" name="contact_number" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Cow Detail Maintenance Section -->
+    <section id="cow-detail-maintenance">
+        <h2>Cow Detail Maintenance</h2>
+        <!-- Display cow detail maintenance information -->
+        <?php
+        // Add PHP code here to fetch and display cow detail maintenance information
+        ?>
+    </section>
+
+    <!-- Add your JavaScript links here if needed -->
+
+</body>
+</html>
+
+<?php
+// Check if the vendor information form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get data from the form
+    $vendorName = $_POST['vendor_name'];
+    $contactPerson = $_POST['contact_person'];
+    $contactNumber = $_POST['contact_number'];
+
+    // Add PHP code here to process and store the vendor information in the database
+    // You may also want to add validation and sanitation
+    // For simplicity, this example does not perform database operations
+}
+?>
